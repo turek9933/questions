@@ -180,8 +180,7 @@ OSPF - protokół typu link state - każdy router posiada pełną wiedzę o topo
     question: "Rodzaje i charakterystyka metod unikania kolizji stosowane w sieciach przewodowych oraz bezprzewodowych.",
     answer: `Kolizje występują gdy kilka urządzeń jednocześnie nadaje przez wspólne medium transmisyjne.
 W sieciach przewodowych stosowano CSMA/CD — urządzenie nasłuchuje medium przed nadaniem, wykrywa kolizję podczas transmisji i ponawia ją po losowym czasie. W nowoczesnych sieciach Ethernet z przełącznikami każde łącze tworzy osobną domenę kolizji, więc CSMA/CD jest praktycznie nieużywane.
-W sieciach bezprzewodowych wykrycie kolizji jest niemożliwe, bo urządzenie nie może jednocześnie nadawać i nasłuchiwać. Stosuje się CSMA/CA — urządzenie nasłuchuje medium, a przed nadaniem odczekuje losowy czas, starając się kolizji uniknąć. Uzupełnia go mechanizm RTS/CTS, który rozwiązuje problem ukrytej stacji: dwa urządzenia mogą nie słyszeć siebie nawzajem, ale obie komunikują się z tym samym punktem dostępowym. RTS/CTS rezerwuje
-medium przed właściwą transmisją.`
+W sieciach bezprzewodowych wykrycie kolizji jest niemożliwe, bo urządzenie nie może jednocześnie nadawać i nasłuchiwać. Stosuje się CSMA/CA — urządzenie nasłuchuje medium, a przed nadaniem odczekuje losowy czas, starając się kolizji uniknąć. Uzupełnia go mechanizm RTS/CTS, który rozwiązuje problem ukrytej stacji: dwa urządzenia mogą nie słyszeć siebie nawzajem, ale obie komunikują się z tym samym punktem dostępowym. RTS/CTS rezerwuje medium przed właściwą transmisją.`
   },
   {
     id: 22,
@@ -259,233 +258,130 @@ Grafika wektorowa opisuje obraz za pomocą obiektów matematycznych: linii, krzy
   {
     id: 31,
     question: "Omów podstawowe pojęcia typografii.",
-    answer: `Typografia to dziedzina zajmująca się projektowaniem i aranżacją tekstu pod względem czytelności i
-estetyki.
+    answer: `Typografia to dziedzina zajmująca się projektowaniem i aranżacją tekstu pod względem czytelności i estetyki.
 Podstawowe pojęcia:
--
-krój pisma — unikalny zestaw znaków o wspólnych cechach graficznych;
--
-czcionka — konkretne wykonanie kroju pisma, uwzględniające jego rozmiar i styl;
--
-font — cyfrowa wersja czcionki;
--
-kroje pisma dzielą się na szeryfowe (z ozdobnikami, np. Times New Roman), bezszeryfowe
-(bez ozdobników, np. Arial) oraz monospace (o stałej szerokości znaku, np. Courier);
--
-majuskuły — wielkie litery; minuskuły — małe litery;
--
-interlinia — odstęp między wierszami tekstu;
--
-kerning — regulacja odstępu między konkretną parą znaków;
--
-tracking — równomierny odstęp między wszystkimi znakami w tekście;
--
-styl pisma — odmiany takie jak regular, italic, bold;
--
-wyrównanie tekstu — do lewej, prawej, wyśrodkowane, justowanie.`
+● krój pisma — unikalny zestaw znaków o wspólnych cechach graficznych;
+● czcionka — konkretne wykonanie kroju pisma, uwzględniające jego rozmiar i styl;
+● font — cyfrowa wersja czcionki;
+● kroje pisma dzielą się na szeryfowe (z ozdobnikami, np. Times New Roman), bezszeryfowe (bez ozdobników, np. Arial) oraz monospace (o stałej szerokości znaku, np. Courier);
+● majuskuły — wielkie litery; minuskuły — małe litery;
+● interlinia — odstęp między wierszami tekstu;
+● kerning — regulacja odstępu między konkretną parą znaków;
+● tracking — równomierny odstęp między wszystkimi znakami w tekście;
+● styl pisma — odmiany takie jak regular, italic, bold;
+● wyrównanie tekstu — do lewej, prawej, wyśrodkowane, justowanie.`
   },
   {
     id: 32,
     question: "Omów podstawowe formaty plików graficznych.",
     answer: `Formaty plików graficznych określają sposób zapisu i kompresji obrazu.
 Formaty rastrowe:
-●
-JPEG/JPG — kompresja stratna, małe rozmiary plików, stosowany do zdjęć;
-●
-PNG — kompresja bezstratna, obsługuje przezroczystość;
-●
-GIF — obsługuje proste animacje i przezroczystość, ograniczona paleta kolorów;
-●
-TIFF — bezstratny format wysokiej jakości, stosowany w druku i zastosowaniach
-profesjonalnych;
-●
-BMP — mapa bitowa, bezstratny, duże rozmiary plików;
-●
-PSD — edytowalny format programu Photoshop, przechowuje informacje o warstwach.
+● JPEG/JPG — kompresja stratna, małe rozmiary plików, stosowany do zdjęć;
+● PNG — kompresja bezstratna, obsługuje przezroczystość;
+● GIF — obsługuje proste animacje i przezroczystość, ograniczona paleta kolorów;
+● TIFF — bezstratny format wysokiej jakości, stosowany w druku i zastosowaniach profesjonalnych;
+● BMP — mapa bitowa, bezstratny, duże rozmiary plików;
+● PSD — edytowalny format programu Photoshop, przechowuje informacje o warstwach.
 Formaty wektorowe:
-●
-●
-
-SVG — otwarty format wektorowy, skalowalny bez utraty jakości;
-AI, EPS — formaty stosowane w profesjonalnej grafice wektorowej.`
+● SVG — otwarty format wektorowy, skalowalny bez utraty jakości;
+● AI, EPS — formaty stosowane w profesjonalnej grafice wektorowej.`
   },
   {
     id: 33,
     question: "Omów podstawowe etapy tworzenia animacji komputerowej.",
     answer: `Tworzenie animacji komputerowej dzieli się na trzy główne etapy.
 Preprodukcja (planowanie):
-●
-●
-●
-
-opracowanie koncepcji i scenariusza;
-projekt postaci i scenografii;
-storyboard — graficzny plan ujęć;
-
-
-●
-
-animatik — wstępna wersja czasowa storyboardu.
+● opracowanie koncepcji i scenariusza;
+● projekt postaci i scenografii;
+● storyboard — graficzny plan ujęć;
+● animatik — wstępna wersja czasowa storyboardu.
 
 Produkcja:
-●
-●
-●
-●
-●
-
-modelowanie obiektów 3D;
-teksturowanie — nadawanie powierzchni materiałów i kolorów;
-rigging — tworzenie szkieletu umożliwiającego animację;
-animowanie — definiowanie ruchu;
-oświetlenie i ustawienie kamery.
+● modelowanie obiektów 3D;
+● teksturowanie — nadawanie powierzchni materiałów i kolorów;
+● rigging — tworzenie szkieletu umożliwiającego animację;
+● animowanie — definiowanie ruchu;
+● oświetlenie i ustawienie kamery.
 
 Postprodukcja (wykończenie):
-●
-●
-●
-
-renderowanie — generowanie finalnych klatek;
-kompozycja i montaż;
-udźwiękowienie i efekty`
+● renderowanie — generowanie finalnych klatek;
+● kompozycja i montaż;
+● udźwiękowienie i efekty`
   },
   {
     id: 34,
     question: "Omów technologie prezentacji scen 3D na stronach internetowych.",
-    answer: `Prezentacja scen 3D na stronach internetowych opiera się na renderowaniu z wykorzystaniem karty
-graficznej bezpośrednio w przeglądarce, bez potrzeby instalowania wtyczek.
+    answer: `Prezentacja scen 3D na stronach internetowych opiera się na renderowaniu z wykorzystaniem karty graficznej bezpośrednio w przeglądarce, bez potrzeby instalowania wtyczek.
 Podstawowe technologie:
-●
-WebGL — niskopoziomowe API umożliwiające renderowanie grafiki przy użyciu GPU;
-●
-WebGPU — nowocześniejszy następca WebGL, zapewniający lepszą wydajność i większą
-kontrolę nad GPU;
-●
-biblioteki bazujące na WebGL, np. Three.js, które upraszczają tworzenie scen, kamer i
-oświetlenia;
-●
-X3D — deklaratywny standard opisu sceny (XML, JSON), który można zintegrować z
-HTML.
-Modele 3D przechowywane są w wyspecjalizowanych formatach, takich jak glTF (GL Transmission
-Format), co pozwala tworzyć interaktywne aplikacje i wizualizacje działające w przeglądarce.`
+● WebGL — niskopoziomowe API umożliwiające renderowanie grafiki przy użyciu GPU;
+● WebGPU — nowocześniejszy następca WebGL, zapewniający lepszą wydajność i większą kontrolę nad GPU;
+● biblioteki bazujące na WebGL, np. Three.js, które upraszczają tworzenie scen, kamer i oświetlenia;
+● X3D — deklaratywny standard opisu sceny (XML, JSON), który można zintegrować z HTML.
+Modele 3D przechowywane są w wyspecjalizowanych formatach, takich jak glTF (GL Transmission Format), co pozwala tworzyć interaktywne aplikacje i wizualizacje działające w przeglądarce.`
   },
   {
     id: 35,
     question: "Na czym polega uczenie, bądź samoistne uczenie się, sieci neuronowych?",
-    answer: `
-Uczenie sieci neuronowych polega na dostosowywaniu wag połączeń między neuronami tak, aby
-minimalizować funkcję straty mierzącą błąd działania sieci.
-W uczeniu nadzorowanym sieć dostaje dane wejściowe wraz z poprawnymi odpowiedziami. Na
-podstawie błędu między wynikiem sieci, a wartością oczekiwaną następuje korekcja wag.
-Najczęściej wykorzystuje się do tego propagację wsteczną błędu oraz metodę spadku gradientu,
-stopniowo zmniejszając błąd.
-
-
-W uczeniu nienadzorowanym sieć nie dostaje poprawnych odpowiedzi, lecz samodzielnie wykrywa
-zależności, wzorce i grupy w danych. Przykładem są mapy Kohonena (Self-Organizing Maps),
-służących do grupowania i wizualizacji wielowymiarowych danych.
-W uczeniu ze wzmocnieniem sieć uczy się poprzez interakcję ze środowiskiem, otrzymując nagrody
-lub kary za swoje działania.
+    answer: `Uczenie sieci neuronowych polega na dostosowywaniu wag połączeń między neuronami tak, aby minimalizować funkcję straty mierzącą błąd działania sieci.
+W uczeniu nadzorowanym sieć dostaje dane wejściowe wraz z poprawnymi odpowiedziami. Na podstawie błędu między wynikiem sieci, a wartością oczekiwaną następuje korekcja wag. Najczęściej wykorzystuje się do tego propagację wsteczną błędu oraz metodę spadku gradientu, stopniowo zmniejszając błąd.
+W uczeniu nienadzorowanym sieć nie dostaje poprawnych odpowiedzi, lecz samodzielnie wykrywa zależności, wzorce i grupy w danych. Przykładem są mapy Kohonena (Self-Organizing Maps), służących do grupowania i wizualizacji wielowymiarowych danych.
+W uczeniu ze wzmocnieniem sieć uczy się poprzez interakcję ze środowiskiem, otrzymując nagrody lub kary za swoje działania.
 Proces uczenia jest podstawą działania współczesnych systemów sztucznej inteligencji.`
   },
   {
     id: 36,
-    question: "Jak sądzisz – w jakim celu buduje się systemy sztucznego życia?",
-    answer: `Sztuczne życie (ALife) to dziedzina nauki badająca zjawiska charakterystyczne dla życia poprzez ich
-symulowanie i odtwarzanie w systemach sztucznych. Systemy buduje się w kilku celach:
--
-naukowym - zrozumienie mechanizmów biologicznych takich jak ewolucja, adaptacja,
-emergencja złożoności i warunków powstawania życia (autopoiesis);
--
-inżynierskim - tworzenie algorytmów inspirowanych naturą: genetycznych, rojowych (PSO,
-ACO), mrówkowych, stosowanych w optymalizacji i uczeniu maszynowym;
--
-modelowania - symulowanie zachowań populacji, ekosystemów i systemów
-wieloagentowych;
--
-robotycznym - projektowanie autonomicznych agentów zdolnych do adaptacji.
+    question: "Jak sądzisz - w jakim celu buduje się systemy sztucznego życia?",
+    answer: `Sztuczne życie (ALife) to dziedzina nauki badająca zjawiska charakterystyczne dla życia poprzez ich symulowanie i odtwarzanie w systemach sztucznych. Systemy buduje się w kilku celach:
+● naukowym - zrozumienie mechanizmów biologicznych takich jak ewolucja, adaptacja, emergencja złożoności i warunków powstawania życia (autopoiesis);
+● inżynierskim - tworzenie algorytmów inspirowanych naturą: genetycznych, rojowych (PSO, ACO), mrówkowych, stosowanych w optymalizacji i uczeniu maszynowym;
+● modelowania - symulowanie zachowań populacji, ekosystemów i systemów wieloagentowych;
+● robotycznym - projektowanie autonomicznych agentów zdolnych do adaptacji.
 Wyróżnia się ALife miękkie (symulacje), twarde (robotyka) i mokre (syntetyczna biochemia).`
   },
   {
     id: 37,
     question: "Co możesz powiedzieć o własnościach i zastosowaniach sterowania rozmytego?",
-    answer: `
-Sterowanie rozmyte to metoda sterowania oparta na logice rozmytej. Wartości to nie tylko 'tak'/'nie',
-lecz także stany pośrednie. Np. 'trochę zimno', 'bardzo szybko'.
+    answer: `Sterowanie rozmyte to metoda sterowania oparta na logice rozmytej. Wartości to nie tylko 'tak'/'nie', lecz także stany pośrednie. Np. 'trochę zimno', 'bardzo szybko'.
 Sterowanie:
--
--
--
--
-
-dobrze radzi sobie z nieliniowością układów;
-jest odporne na zakłócenia i zmiany parametrów;
-daje płynne sterowanie;
-może mieć czytelną postać językową.
-
-Stosowane jest np. w motoryzacji - wspomaganie, przemysł - regulacja temperatur, ciśnienia,
-robotyka - sterowanie ruchem.`
+● dobrze radzi sobie z nieliniowością układów;
+● jest odporne na zakłócenia i zmiany parametrów;
+● daje płynne sterowanie;
+● może mieć czytelną postać językową.
+Stosowane jest np. w motoryzacji - wspomaganie; przemysł - regulacja temperatur, ciśnienia; robotyka - sterowanie ruchem.`
   },
   {
     id: 38,
     question: "Czy drzewo decyzyjne jest metodą reprezentacji wiedzy i dlaczego?",
-    answer: `Drzewo decyzyjne to hierarchiczna struktura danych. Drzewo jest metodą reprezentacji wiedzy.
-Zapisuje wiedzę w postaci hierarchicznych reguł if-then, gdzie:
--
-węzły wewnętrzne reprezentują testy na atrybutach,
--
-gałęzie odpowiadają wynikom tych testów,
--
-liście przechowują decyzje lub klasyfikacje.
-
-
-Każda ścieżka od korzenia do liścia odpowiada jednej regule wnioskowania. Struktura jest czytelna i
-interpretowalana przez człowieka. Drzewo może być budowane ręcznie przez eksperta lub
-automatycznie z danych (algorytmy ID3, C4.5, CART), co czyni je narzędziem zarówno
-reprezentacji, jak i pozyskiwania wiedzy.`
+    answer: `Drzewo decyzyjne to hierarchiczna struktura danych. Drzewo jest metodą reprezentacji wiedzy. Zapisuje wiedzę w postaci hierarchicznych reguł if-then, gdzie:
+● węzły wewnętrzne reprezentują testy na atrybutach,
+● gałęzie odpowiadają wynikom tych testów,
+● liście przechowują decyzje lub klasyfikacje.
+Każda ścieżka od korzenia do liścia odpowiada jednej regule wnioskowania. Struktura jest czytelna i interpretowalana przez człowieka. Drzewo może być budowane ręcznie przez eksperta lub automatycznie z danych (algorytmy ID3, C4.5, CART), co czyni je narzędziem zarówno reprezentacji, jak i pozyskiwania wiedzy.`
   },
   {
     id: 39,
     question: "Jakie widzisz współczesne zastosowania algorytmów mrówkowych?",
-    answer: `Algorytmy mrówkowe (Ant Colony Optimization - ACO) są to algorytme optymalizacyjne oparte na
-działaniu intuicyjnym.
-Działają na zasadzie stygmergii - mrówki komunikują się pośrednio przez środowisko, odkładając
-wirtualne feromony na ścieżkach. Krótsze trasy są przemierzane częściej, więc feromon odparowuje
-na nich wolniej, co wzmacnia ich wybór przez kolejne mrówki i prowadzi do zbieżności do
-optymalnego rozwiązania. Zastosowania:
-●
-●
-●
-●
-
-optymalizacja tras - problem komiwojażera (TSP), planowanie dostaw;
-sieci komputerowe - dynamiczny routing danych;
-harmonogramowanie zadań - przydział zasobów;
-robotyka - koordynacja rojów robotów.`
+    answer: `Algorytmy mrówkowe (Ant Colony Optimization - ACO) są to algorytme optymalizacyjne oparte na działaniu intuicyjnym.
+Działają na zasadzie stygmergii - mrówki komunikują się pośrednio przez środowisko, odkładając wirtualne feromony na ścieżkach. Krótsze trasy są przemierzane częściej, więc feromon odparowuje na nich wolniej, co wzmacnia ich wybór przez kolejne mrówki i prowadzi do zbieżności do optymalnego rozwiązania. Zastosowania:
+● optymalizacja tras - problem komiwojażera (TSP), planowanie dostaw;
+● sieci komputerowe - dynamiczny routing danych;
+● harmonogramowanie zadań - przydział zasobów;
+● robotyka - koordynacja rojów robotów.`
   },
   {
     id: 40,
     question: "Zasady definiujące model danych rozumiany jako architektura BD.",
-    answer: `Model danych jako architektura BD to zestaw reguł, struktur i więzów definiujących sposób
-przechowywania, organizacji i przetwarzania danych w systemie informatycznym.
+    answer: `Model danych jako architektura BD to zestaw reguł, struktur i więzów definiujących sposób przechowywania, organizacji i przetwarzania danych w systemie informatycznym.
 Centralną koncepcją jest architektura ANSI/SPARC, która wyróżnia trzy poziomy abstrakcji:
-●
-●
-●
-
-koncepcyjny - wysokopoziomowy widok encji i relacji, niezależny od technologii;
-logiczny - struktura danych bez powiązania z implementacją (tabele, atrybuty, klucze, ERD);
-fizyczny - sposób faktycznego składowania danych (indeksy, partycjonowanie).
+● koncepcyjny - wysokopoziomowy widok encji i relacji, niezależny od technologii;
+● logiczny - struktura danych bez powiązania z implementacją (tabele, atrybuty, klucze, ERD);
+● fizyczny - sposób faktycznego składowania danych (indeksy, partycjonowanie).
 
 Kluczowe zasady definiujące model:
-●
-definicja struktury - typy danych, klucze główne i obce, więzy integralności;
-●
-operowanie danymi - reguły manipulacji danymi (DDL, DML);
-●
-integralność i spójność - więzy klucza obcego, zasady ACID;
-●
-niezależność danych - zmiany na poziomie fizycznym nie wpływają na poziom logiczny i
+● definicja struktury - typy danych, klucze główne i obce, więzy integralności;
+● operowanie danymi - reguły manipulacji danymi (DDL, DML);
+● integralność i spójność - więzy klucza obcego, zasady ACID;
+● niezależność danych - zmiany na poziomie fizycznym nie wpływają na poziom logiczny i
 odwrotnie.`
   },
   {
@@ -493,501 +389,302 @@ odwrotnie.`
     question: "Typy architektonicznych modeli danych.",
     answer: `Architektoniczne modele danych określają sposób organizacji i powiązań danych w bazie danych.
 Wyróżnia się:
--
-model hierarchiczny - dane zorganizowane w strukturę drzewa, relacje rodzic-dziecko, brak
-obsługi relacji wiele-do-wielu,
-
-
--
-model sieciowy - rozszerzenie hierarchicznego, węzły mogą mieć wielu rodziców, obsługuje
-relacje wiele-do-wielu,
--
-model relacyjny - dane przechowywane w tabelach powiązanych kluczami, podstawa SQL,
-najpowszechniejszy,
--
-model obiektowy - dane przechowywane jako obiekty z atrybutami i metodami, bliski
-paradygmatowi OOP,
--
-model obiektowo-relacyjny - hybryd relacyjnego i obiektowego, rozszerza SQL o typy
-obiektowe,
--
-modele NoSQL - dokumentowe (JSON), klucz-wartość, kolumnowe, grafowe - stosowane
-przy danych nieustrukturyzowanych i dużej skali.`
+● model hierarchiczny - dane zorganizowane w strukturę drzewa, relacje rodzic-dziecko, brak obsługi relacji wiele-do-wielu,
+● model sieciowy - rozszerzenie hierarchicznego, węzły mogą mieć wielu rodziców, obsługuje relacje wiele-do-wielu,
+● model relacyjny - dane przechowywane w tabelach powiązanych kluczami, podstawa SQL, najpowszechniejszy,
+● model obiektowy - dane przechowywane jako obiekty z atrybutami i metodami, bliski paradygmatowi OOP,
+● model obiektowo-relacyjny - hybryd relacyjnego i obiektowego, rozszerza SQL o typy obiektowe,
+● modele NoSQL - dokumentowe (JSON), klucz-wartość, kolumnowe, grafowe - stosowane przy danych nieustrukturyzowanych i dużej skali.`
   },
   {
     id: 42,
     question: "Trójpoziomowa architektura SBD.",
-    answer: `Trójpoziomowa architektura SBD (standard ANSI/SPARC) dzieli system baz danych na trzy
-poziomy abstrakcji:
-●
-zewnętrzny - widoki danych dla poszczególnych użytkowników lub aplikacji, każdy widzi
-tylko fragment bazy który go dotyczy,
-●
-konceptualny - pełna logiczna struktura całej bazy danych, niezależna od implementacji,
-●
-fizyczny - sposób faktycznego przechowywania danych na nośniku (indeksy, pliki,
-partycjonowanie).
+    answer: `Trójpoziomowa architektura SBD (standard ANSI/SPARC) dzieli system baz danych na trzy poziomy abstrakcji:
+● zewnętrzny - widoki danych dla poszczególnych użytkowników lub aplikacji, każdy widzi tylko fragment bazy który go dotyczy,
+● konceptualny - pełna logiczna struktura całej bazy danych, niezależna od implementacji,
+● fizyczny - sposób faktycznego przechowywania danych na nośniku (indeksy, pliki, partycjonowanie).
 Poziomy są połączone odwzorowaniami (mapowaniami), które tłumaczą dane między warstwami.
-Architektura zapewnia dwa rodzaje niezależności danych:
-●
-●
 
-fizyczną - zmiany na poziomie fizycznym nie wpływają na konceptualny,
-logiczną - zmiany na poziomie konceptualnym nie wpływają na widoki zewnętrzne.`
+Architektura zapewnia dwa rodzaje niezależności danych:
+● fizyczną - zmiany na poziomie fizycznym nie wpływają na konceptualny,
+● logiczną - zmiany na poziomie konceptualnym nie wpływają na widoki zewnętrzne.`
   },
   {
     id: 43,
     question: "Istota relacyjnego modelu danych.",
-    answer: `Relacyjny model danych opiera się na matematycznych podstawach teorii zbiorów i algebry
-relacyjnej. Dane przechowywane są w relacjach (tabelach) - formalnych zbiorach krotek (wierszy) o
-określonych atrybutach (kolumnach).
+    answer: `Relacyjny model danych opiera się na matematycznych podstawach teorii zbiorów i algebry relacyjnej. Dane przechowywane są w relacjach (tabelach) - formalnych zbiorach krotek (wierszy) o określonych atrybutach (kolumnach).
 Kluczowe elementy modelu:
--
-klucz główny - jednoznacznie identyfikuje każdy wiersz w tabeli;
--
-klucz obcy - atrybut odwołujący się do klucza głównego innej tabeli, realizuje powiązania
-między tabelami;
--
-więzy integralności, czyli zasady dotyczące wierszy: integralność wiersza - klucz główny nie
-może być NULL, referencyjność - klucz obcy musi wskazywać na istniejącą krotkę, dziedzina
--wartości atrybutów muszą należeć do określonej dziedziny;
--
-algebra relacyjna - formalna podstawa operacji na danych: selekcja, projekcja, złączenie,
-suma, różnica.
-Model relacyjny jest obecnie najpowszechniej stosowanym modelem baz danych, realizowanym
-przez systemy takie jak PostgreSQL czy MySQL.`
+● klucz główny - jednoznacznie identyfikuje każdy wiersz w tabeli;
+● klucz obcy - atrybut odwołujący się do klucza głównego innej tabeli, realizuje powiązania między tabelami;
+● więzy integralności, czyli zasady dotyczące wierszy:
+  ◌ integralność wiersza - klucz główny nie może być NULL,
+  ◌ referencyjność - klucz obcy musi wskazywać na istniejącą krotkę,
+  ◌ dziedzina - wartości atrybutów muszą należeć do określonej dziedziny;
+● algebra relacyjna - formalna podstawa operacji na danych: selekcja, projekcja, złączenie, suma, różnica.
+Model relacyjny jest obecnie najpowszechniej stosowanym modelem baz danych, realizowanym przez systemy takie jak PostgreSQL czy MySQL.`
   },
   {
     id: 44,
     question: "Elementy i funkcje jądra systemu zarządzania BD.",
-    answer: `Jądro systemu zarządzania bazą danych odpowiada za wszystkie podstawowe operacje na danych.
-Jego główne elementy i funkcje to:
--
-procesor zapytań - przetwarza zapytania w trzech etapach: analiza składni; optymalizator;
-wykonanie planu;
--
-menedżer pamięci - zarządza pamięcią podręczną, minimalizuje odczyty z dysku;
--
-menedżer plików - odpowiada za fizyczny dostęp do danych na nośniku;
--
-menedżer transakcji - zarządza zatwierdzaniem i wycofywaniem transakcji;
--
-menedżer współbieżności - kontroluje równoczesny dostęp wielu użytkowników, zapobiega
-konfliktom;
--
-menedżer blokad - na potrzeby kontroli współbieżności realizuje mechanizm blokowania do
-zasobów;
--
-menedżer odzyskiwania - przywraca spójny stan bazy po awarii.`
+    answer: `Jądro systemu zarządzania bazą danych odpowiada za wszystkie podstawowe operacje na danych. Jego główne elementy i funkcje to:
+● procesor zapytań - przetwarza zapytania w trzech etapach: analiza składni, optymalizator, wykonanie planu;
+● menedżer pamięci - zarządza pamięcią podręczną, minimalizuje odczyty z dysku;
+● menedżer plików - odpowiada za fizyczny dostęp do danych na nośniku;
+● menedżer transakcji - zarządza zatwierdzaniem i wycofywaniem transakcji;
+● menedżer współbieżności - kontroluje równoczesny dostęp wielu użytkowników, zapobiega konfliktom;
+● menedżer blokad - na potrzeby kontroli współbieżności realizuje mechanizm blokowania do zasobów;
+● menedżer odzyskiwania - przywraca spójny stan bazy po awarii.`
   },
   {
     id: 45,
-    question: "Charakterystyka tzw. metody blokowania, zapewniającej współbieżne",
-    answer: `wykonywanie transakcji w BD.
-Metoda blokowania w bazach danych polega na kontrolowaniu dostępu do danych poprzez
-przydzielanie blokad transakcjom - co zapobiega konfliktom przy współbieżnym wykonaniu.
-Blokady są: współdzielone (odczyt - wiele transakcji może je otrzymać jednocześnie); wyłączne
-(modyfikacja - blokuje dostęp innym transakcjom).
-Szczegółowość blokad obejmuje poziom wiersza, strony lub tabeli. Im bardziej szczegółowa blokada
-tym większa współbieżność, ale i większy narzut systemowy.
-Protokół dwufazowy zapewnia szeregowość i składa się z fazy rosnącej (pobieranie blokad) i
-malejącej (zwalnianie blokad).
-Istnieje ryzyko zakleszczenia, kiedy transakcje czekają wzajemnie na zwolnienie blokad.
-Zakleszczenia wykrywa się je grafem i rozwiązuje wycofując jedną z transakcji.`
+    question: "Charakterystyka tzw. metody blokowania, zapewniającej współbieżne wykonywanie transakcji w BD",
+    answer: `Metoda blokowania w bazach danych polega na kontrolowaniu dostępu do danych poprzez przydzielanie blokad transakcjom - co zapobiega konfliktom przy współbieżnym wykonaniu.
+Blokady są:
+● współdzielone - odczyt - wiele transakcji może je otrzymać jednocześnie;
+● wyłączne - modyfikacja - blokuje dostęp innym transakcjom.
+Szczegółowość blokad obejmuje poziom wiersza, strony lub tabeli. Im bardziej szczegółowa blokada tym większa współbieżność, ale i większy narzut systemowy.
+Protokół dwufazowy zapewnia szeregowość i składa się z fazy rosnącej (pobieranie blokad) i malejącej (zwalnianie blokad).
+Istnieje ryzyko zakleszczenia, kiedy transakcje czekają wzajemnie na zwolnienie blokad. Zakleszczenia wykrywa się grafem i rozwiązuje wycofując jedną z transakcji.`
   },
   {
     id: 46,
     question: "Wymień i scharakteryzuj diagramy UML opisujące strukturę systemu informatycznego.",
-    answer: `
-Diagramy strukturalne UML opisują statyczną budowę systemu. Wyróżnia się:
--
-diagram klas - przedstawia klasy, ich atrybuty, metody oraz relacje - podstawowy diagram
-strukturalny;
--
-diagram obiektów - diagram konkretnych instancji klas w danym momencie działania
-systemu;
--
-diagram komponentów - przedstawia fizyczne elementy systemu (biblioteki, pliki, moduły) i
-zależności między nimi;
--
-diagram pakietów - grupuje elementy modelu w pakiety i zależności między nimi;
--
-diagram wdrożenia - opisuje fizyczne rozmieszczenie komponentów na sprzęcie (serwery,
-urządzenia);
-
-
--
-diagram struktur złożonych - przedstawia wewnętrzną strukturę zaawansowanych klas lub
-komponentów.`
+    answer: `Diagramy strukturalne UML opisują statyczną budowę systemu. Wyróżnia się:
+● diagram komponentów - przedstawia fizyczne elementy systemu (biblioteki, pliki, moduły) i zależności między nimi;
+● diagram pakietów - grupuje elementy modelu w pakiety i zależności między nimi;
+● diagram klas - przedstawia klasy, ich atrybuty, metody oraz relacje - podstawowy diagram strukturalny;
+● diagram obiektów - diagram konkretnych instancji klas w danym momencie działania systemu;
+● diagram wdrożenia - opisuje fizyczne rozmieszczenie komponentów na sprzęcie (serwery, urządzenia);
+● diagram struktur złożonych - przedstawia wewnętrzną strukturę zaawansowanych klas lub komponentów.`
   },
   {
     id: 47,
     question: "Wymień i scharakteryzuj diagramy UML opisujące zachowanie systemu informatycznego.",
-    answer: `
-Diagramy behawioralne UML opisują dynamiczne zachowanie systemu i interakcje między jego
-elementami. Wyróżnia się:
--
-diagram przypadków użycia - przedstawia funkcjonalności systemu z perspektywy aktorów;
--
-diagram aktywności - modeluje przepływ sterowania i przepływ danych w procesach;
--
-diagram sekwencji - przedstawia kolejność komunikatów wymienianych między obiektami w
-czasie;
--
-diagram stanów - opisuje cykl życia obiektu poprzez stany i przejścia między nimi na skutek
-wywołanych zdarzeń;
--
-diagram komunikacji - akcentuje powiązania między obiektami zamiast kolejności czasowej;
--
-diagram przeglądu interakcji - łączy diagramy sekwencji w ogólny przepływ sterowania.`
+    answer: `Diagramy behawioralne UML opisują dynamiczne zachowanie systemu i interakcje między jego elementami. Wyróżnia się:
+● diagram komunikacji - akcentuje powiązania między obiektami zamiast kolejności czasowej;
+● diagram aktywności - modeluje przepływ sterowania i przepływ danych w procesach;
+● diagram przypadków użycia - przedstawia funkcjonalności systemu z perspektywy aktorów;
+● diagram stanów - opisuje cykl życia obiektu poprzez stany i przejścia między nimi na skutek wywołanych zdarzeń;
+● diagram sekwencji - przedstawia kolejność komunikatów wymienianych między obiektami w czasie;
+● diagram przeglądu interakcji - łączy diagramy sekwencji w ogólny przepływ sterowania.`
   },
   {
     id: 48,
     question: "Omów diagramy przypadków użycia z języka UML.",
     answer: `Diagram przypadków użycia przedstawia funkcjonalności aplikacji z perspektywy użytkowników.
 Składa się z:
--
-aktorów - zewnętrzny użytkownik lub system wchodzący w interakcję z aplikacją;
--
-przypadków użycia - konkretna funkcjonalność realizowana przez aplikację na rzecz aktora;
--
-granicy aplikacji - oddziela aplikację od aktorów.
+● aktorów - zewnętrzny użytkownik lub system wchodzący w interakcję z aplikacją;
+● przypadków użycia - konkretna funkcjonalność realizowana przez aplikację na rzecz aktora;
+● granicy aplikacji - oddziela aplikację od aktorów.
+
 W ramach diagramu zachodzą określone relacje między elementami:
--
-połączenie aktora z przypadkiem użycia - asocjacja;
--
-przypadek użycia obowiązkowo wywołuje inny element- include;
--
-przypadek użycia opcjonalnie rozszerza inny w określonych warunkach - extend;
--
-dziedziczenie aktorów - aktor potomny przejmuje relacje aktora nadrzędnego.
-Diagram przypadków użycia jest stosowany na etapie analizy wymaga. Jego zadanie to czytelne
-przedstawienie projektu dla klienta, stanowiące podstawę do dalszego projektowania systemu.`
+● połączenie aktora z przypadkiem użycia - asocjacja;
+● przypadek użycia obowiązkowo wywołuje inny element- include;
+● przypadek użycia opcjonalnie rozszerza inny w określonych warunkach - extend;
+● dziedziczenie aktorów - aktor potomny przejmuje relacje aktora nadrzędnego.
+Diagram przypadków użycia jest stosowany na etapie analizy wymaga. Jego zadanie to czytelne przedstawienie projektu dla klienta, stanowiące podstawę do dalszego projektowania systemu.`
   },
   {
     id: 49,
     question: "Omów rodzaje testów w procesie wytwórczym systemu informatycznego.",
-    answer: `
-W procesie wytwórczym wyróżnia się rodzaje testów, które odpowiadają kolejnym etapom modelu
-V:
--
-jednostkowe - testowanie pojedynczych funkcji, klas czy endpointów w izolacji,
-wykonywane przez programistów;
--
-integracyjne - sprawdzanie poprawności współpracy między modułami po ich połączeniu;
--
-systemowe - testowanie całego systemu jako całości pod kątem zgodności z wymaganiami;
--
-akceptacyjne (UAT) - weryfikacja przez klienta lub użytkownika końcowego czy system
-spełnia wymagania biznesowe.
-
+    answer: `W procesie wytwórczym wyróżnia się rodzaje testów, które odpowiadają kolejnym etapom modelu V:
+● jednostkowe - testowanie pojedynczych funkcji, klas czy endpointów w izolacji, wykonywane przez programistów;
+● integracyjne - sprawdzanie poprawności współpracy między modułami po ich połączeniu;
+● systemowe - testowanie całego systemu jako całości pod kątem zgodności z wymaganiami;
+● akceptacyjne (UAT) - weryfikacja przez klienta lub użytkownika końcowego czy system spełnia wymagania biznesowe.
 
 Dodatkowo stosuje się:
--
-regresyjne - sprawdzanie czy nowe zmiany nie zepsuły istniejącej funkcjonalności,
--
-wydajnościowe - ocena zachowania systemu pod obciążeniem (load testing, stress testing),
--
-bezpieczeństwa - wykrywanie podatności i luk w zabezpieczeniach.
+● regresyjne - sprawdzanie czy nowe zmiany nie zepsuły istniejącej funkcjonalności,
+● wydajnościowe - ocena zachowania systemu pod obciążeniem (load testing, stress testing),
+● bezpieczeństwa - wykrywanie podatności i luk w zabezpieczeniach.
+
 Testy dzieli się także ze względu na dostęp do kodu:
--
-białej skrzynki - tester zna implementację, testuje ścieżki kodu,
--
-czarnej skrzynki - tester testuje interfejs bez znajomości implementacji.`
+● białej skrzynki - tester zna implementację, testuje ścieżki kodu,
+● czarnej skrzynki - tester testuje interfejs bez znajomości implementacji.`
   },
   {
     id: 50,
     question: "Omów trzy różne modele cyklu życia systemu informatycznego.",
-    answer: `Modele cyklu życia systemu informatycznego opisują sposób organizacji procesu wytwórczego. Trzy
-podstawowe to:
--
-Model kaskadowy - liniowy, sekwencyjny - każda faza (wymagania -> projekt ->
-implementacja -> testowanie -> wdrożenie) musi zostać ukończona przed rozpoczęciem kolejnej.
+    answer: `Modele cyklu życia systemu informatycznego opisują sposób organizacji procesu wytwórczego. Trzy podstawowe to:
+
+● Model kaskadowy - liniowy, sekwencyjny - każda faza (wymagania -> projekt -> implementacja -> testowanie -> wdrożenie) musi zostać ukończona przed rozpoczęciem kolejnej.
 Zalety: prosty, dobrze udokumentowany.
-Wady: brak elastyczności, błędy wykryte późno są kosztowne w naprawie, klient widzi produkt
-dopiero na końcu.
--
-Model iteracyjno-przyrostowy - system budowany jest w kolejnych iteracjach - każda
-dostarcza działający fragment systemu. Klient może weryfikować postęp i zgłaszać zmiany między
-iteracjami.
+Wady: brak elastyczności, błędy wykryte późno są kosztowne w naprawie, klient widzi produkt dopiero na końcu.
+
+● Model iteracyjno-przyrostowy - system budowany jest w kolejnych iteracjach - każda dostarcza działający fragment systemu. Klient może weryfikować postęp i zgłaszać zmiany między iteracjami.
 Zalety: elastyczność, wczesna dostawa częściowego produktu.
 Wady: wymaga dobrego zarządzania zakresem.
--
-Model spiralny - łączy podejście iteracyjne z analizą ryzyka. Każda pętla spirali składa się z
-czterech faz: planowanie, analiza ryzyka, wytwarzanie, ewaluacja. Stosowany przy dużych i
-złożonych projektach gdzie ryzyko jest wysokie.
+
+● Model spiralny - łączy podejście iteracyjne z analizą ryzyka. Każda pętla spirali składa się z czterech faz: planowanie, analiza ryzyka, wytwarzanie, ewaluacja. Stosowany przy dużych i złożonych projektach gdzie ryzyko jest wysokie.
 Wady: kosztowny i trudny w zarządzaniu.
+
 Dodatkowo warto wymienić model V - rozszerzenie kaskadowego, gdzie każdemu etapowi
 wytwórczemu odpowiada poziom testowania`
   },
   {
     id: 51,
     question: "Charakterystyka co najmniej trzech elementów niezbędnych do budowy systemu wbudowanego.",
-    answer: `
-System wbudowany to specjalizowany system komputerowy realizujący dedykowane zadania,
-zazwyczaj w warunkach ograniczonych zasobów.
+    answer: `System wbudowany to specjalizowany system komputerowy realizujący dedykowane zadania, zazwyczaj w warunkach ograniczonych zasobów.
 Niezbędne elementy to:
-●
-mikroprocesor lub mikrokontroler - jednostka obliczeniowa wykonująca program;
-mikrokontroler integruje dodatkowo pamięć i peryferia na jednym układzie;
-●
-pamięć - ROM/Flash przechowuje kod programu i stałe dane, RAM przechowuje dane
-robocze i stos; zasoby są znacząco ograniczone w porównaniu do systemów ogólnego przeznaczenia;
-●
-interfejsy I/O - umożliwiają komunikację z otoczeniem, a także łączą system z urządzeniami
-zewnętrznymi np. czujnikami;
-●
-czujniki i elementy wykonawcze (aktuatory) - czujniki dostarczają danych z otoczenia (np.
-temperatura, ciśnienie), aktuatory wykonują działania fizyczne (siłowniki, silniki, zawory);
-
-
-●
-Real-Time Operating System (RTOS) - w złożonych systemach zarządza zadaniami z
-gwarancją czasową; zapewnia przewidywalne wykonanie krytycznych operacji.`
+● mikroprocesor lub mikrokontroler - jednostka obliczeniowa wykonująca program; mikrokontroler integruje dodatkowo pamięć i peryferia na jednym układzie;
+● pamięć - ROM/Flash przechowuje kod programu i stałe dane, RAM przechowuje dane robocze i stos; zasoby są znacząco ograniczone w porównaniu do systemów ogólnego przeznaczenia;
+● interfejsy I/O - umożliwiają komunikację z otoczeniem, a także łączą system z urządzeniami zewnętrznymi np. czujnikami;
+● czujniki i elementy wykonawcze (aktuatory) - czujniki dostarczają danych z otoczenia (np. temperatura, ciśnienie), aktuatory wykonują działania fizyczne (siłowniki, silniki, zawory);
+● Real-Time Operating System (RTOS) - w złożonych systemach zarządza zadaniami z gwarancją czasową; zapewnia przewidywalne wykonanie krytycznych operacji.`
   },
   {
     id: 52,
     question: "Charakterystyka trzech elementów mikrokontrolera.",
-    answer: `Mikrokontroler to układ scalony integrujący na jednym chipie wszystkie elementy niezbędne do
-sterowania urządzeniem.
-Trzy kluczowe elementy to:
-●
-CPU (jednostka centralna) - wykonuje instrukcje programu, zarządza pracą pozostałych
-bloków, obsługuje przerwania - mechanizm natychmiastowej reakcji na zdarzenia zewnętrzne i
-wewnętrzne bez ciągłego odpytywania;
-●
-pamięć - RAM przechowuje dane robocze i stos (ulotna), Flash przechowuje kod programu
-(nieulotna), EEPROM przechowuje dane trwałe zapisywane w trakcie konfiguracji;
-●
-interfejsy I/O i peryferia:
-○ GPIO (cyfrowe wejścia/wyjścia),
-○ interfejsy komunikacyjne (UART, SPI, I2C),
-○ timery/liczniki (PWM, odmierzanie czasu),
-○ przetwornik ADC (konwersja sygnałów analogowych na cyfrowe).`
+    answer: `Mikrokontroler to układ scalony integrujący na jednym chipie wszystkie elementy niezbędne do sterowania urządzeniem. Trzy kluczowe elementy to:
+● CPU (jednostka centralna) - wykonuje instrukcje programu, zarządza pracą pozostałych bloków, obsługuje przerwania - mechanizm natychmiastowej reakcji na zdarzenia zewnętrzne i wewnętrzne bez ciągłego odpytywania;
+● pamięć - RAM przechowuje dane robocze i stos (ulotna), Flash przechowuje kod programu (nieulotna), EEPROM przechowuje dane trwałe zapisywane w trakcie konfiguracji;
+● interfejsy I/O i peryferia:
+  ◌ GPIO (cyfrowe wejścia/wyjścia),
+  ◌ interfejsy komunikacyjne (UART, SPI, I2C),
+  ◌ timery/liczniki (PWM, odmierzanie czasu),
+  ◌ przetwornik ADC (konwersja sygnałów analogowych na cyfrowe).`
   },
   {
     id: 53,
-    question: "Zasadnicze różnice i podobieństwa występujące między",
-    answer: `mikroprocesorem, a mikrokontrolerem.
-Zarówno mikroprocesor i mikrokontroler to centralne jednostki układów elektronicznych. Obie
-jednostki mają procesor, są programowalne, dostosowane do pracy z urządzeniami zewnętrznymi
-oraz sterowania nimi.
+    question: "Zasadnicze różnice i podobieństwa występujące między mikroprocesorem, a mikrokontrolerem.",
+    answer: `Zarówno mikroprocesor i mikrokontroler to centralne jednostki układów elektronicznych. Obie jednostki mają procesor, są programowalne, dostosowane do pracy z urządzeniami zewnętrznymi oraz sterowania nimi.
 Różnice:
-Mikroprocesor służy przede wszystkim do wykonywania zaawansowanych obliczeń. Wymaga on
-zewnętrznych układów pamięci i peryferiów. Sprawdzi się on w smartfonach, czy komputerach
-osobistych.
-Mikrokontroler ma zintegrowane moduły pamięci RAM, flash oraz wybrane peryferia. Jest
-dedykowany do prostych, zintegrowanych zadań, np. obsługa pralki czy pilot TV.`
+Mikroprocesor służy przede wszystkim do wykonywania zaawansowanych obliczeń. Wymaga on zewnętrznych układów pamięci i peryferiów. Sprawdzi się on w smartfonach, czy komputerach osobistych.
+Mikrokontroler ma zintegrowane moduły pamięci RAM, flash oraz wybrane peryferia. Jest dedykowany do prostych, zintegrowanych zadań, np. obsługa pralki czy pilot TV.`
   },
   {
     id: 54,
-    question: "Konsekwencje stosowania systemów operacyjnych w systemach",
-    answer: `wbudowanych.
-Stosowanie systemu operacyjnego w systemie wbudowanym ma następujące konsekwencje:
+    question: "Konsekwencje stosowania systemów operacyjnych w systemach wbudowanych.",
+    answer: `Stosowanie systemu operacyjnego w systemie wbudowanym ma następujące konsekwencje:
+
 Korzyści:
-●
-wielozadaniowość - możliwość równoczesnego wykonywania wielu zadań według
-priorytetów;
-●
-przewidywalność - gwarancja, że krytyczne zadania zostaną wykonane w ściśle określonym
-czasie, co jest niezbędne w systemach czasu rzeczywistego;
-●
-abstrakcja sprzętu - programista operuje na API systemu zamiast bezpośrednio na rejestrach
-sprzętu;
+● wielozadaniowość - możliwość równoczesnego wykonywania wielu zadań według priorytetów;
+● przewidywalność - gwarancja, że krytyczne zadania zostaną wykonane w ściśle określonym czasie, co jest niezbędne w systemach czasu rzeczywistego;
+● abstrakcja sprzętu - programista operuje na API systemu zamiast bezpośrednio na rejestrach sprzętu;
+● lepsza organizacja kodu - podział na niezależne zadania ułatwia rozwój i utrzymanie systemu.
 
-
-●
-lepsza organizacja kodu - podział na niezależne zadania ułatwia rozwój i utrzymanie systemu.
 Wady:
-●
-narzut pamięciowy - OS zajmuje część ograniczonej pamięci Flash i RAM;
-●
-narzut czasowy - przełączanie kontekstu między zadaniami ma koszt obliczeniowy;
-●
-wzrost złożoności - konieczność zarządzania synchronizacją zadań, unikania zakleszczeń i
-wyścigów;
-●
-zużycie energii - dodatkowe procesy OS zwiększają pobór prądu, co jest istotne w
-urządzeniach bateryjnych.`
+● narzut pamięciowy - OS zajmuje część ograniczonej pamięci Flash i RAM;
+● narzut czasowy - przełączanie kontekstu między zadaniami ma koszt obliczeniowy;
+● wzrost złożoności - konieczność zarządzania synchronizacją zadań, unikania zakleszczeń i wyścigów;
+● zużycie energii - dodatkowe procesy OS zwiększają pobór prądu, co jest istotne w urządzeniach bateryjnych.`
   },
   {
     id: 55,
     question: "Znaczenie terminów: OTP, programowanie w systemie, bootloader.",
     answer: `OTP, programowanie w systemie, bootloader
-OTP (One-Time Programmable) - rodzaj nieulotnej pamięci, którą można zaprogramować tylko raz;
-stosowana tam gdzie kod lub dane muszą być niezmienne i zabezpieczone przed modyfikacją (klucze
-kryptograficzne, firmware produkcyjny).
-Programowanie w systemie (In-System Programming) - programowanie mikrokontrolera bez
-wyjmowania go z płytki docelowej, przez dedykowany interfejs; wymaga sprzętowego interfejsu
-debugowania lub obecności bootloadera.
-Bootloader - mały program umieszczony w chronionym obszarze pamięci Flash, uruchamiany jako
-pierwszy po resecie; jego główną rolą w systemach wbudowanych jest umożliwienie aktualizacji
-firmware przez interfejs komunikacyjny - bez zewnętrznego programatora; w systemach desktopowych
-(np. GRUB) odpowiada za wybór i załadowanie systemu operacyjnego.`
+OTP (One-Time Programmable) - rodzaj nieulotnej pamięci, którą można zaprogramować tylko raz; stosowana tam gdzie kod lub dane muszą być niezmienne i zabezpieczone przed modyfikacją (klucze kryptograficzne, firmware produkcyjny).
+Programowanie w systemie (In-System Programming) - programowanie mikrokontrolera bez wyjmowania go z płytki docelowej, przez dedykowany interfejs; wymaga sprzętowego interfejsu debugowania lub obecności bootloadera.
+Bootloader - mały program umieszczony w chronionym obszarze pamięci Flash, uruchamiany jako pierwszy po resecie; jego główną rolą w systemach wbudowanych jest umożliwienie aktualizacji firmware przez interfejs komunikacyjny - bez zewnętrznego programatora; w systemach desktopowych (np. GRUB) odpowiada za wybór i załadowanie systemu operacyjnego.`
   },
   {
     id: 56,
     question: "Społeczeństwo informacyjne.",
-    answer: `Społeczeństwo informacyjne - informacja i technologie jej przetwarzania stanowią kluczowy zasób
-gospodarczy i społeczny. Cechy charakterystyczne:
-● cyfryzacja - większość procesów gospodarczych, społecznych i kulturowych odbywa się z udziałem
-technologii cyfrowych;
-● gospodarka jest oparta na wiedzy - informacja staje się towarem i czynnikiem produkcji, dominują
-sektory usług i technologii;
+    answer: `Społeczeństwo informacyjne - informacja i technologie jej przetwarzania stanowią kluczowy zasób gospodarczy i społeczny. Cechy charakterystyczne:
+● cyfryzacja - większość procesów gospodarczych, społecznych i kulturowych odbywa się z udziałem technologii cyfrowych;
+● gospodarka jest oparta na wiedzy - informacja staje się towarem i czynnikiem produkcji, dominują sektory usług i technologii;
 ● globalny przepływ informacji - Internet znosi bariery geograficzne w dostępie do danych;
-● kompetencje cyfrowe - umiejętność korzystania z technologii staje się podstawową kompetencją
-obywatelską.
-Zagrożenia związane z życiem w społeczeństwie informacyjnym to: wykluczenie cyfrowe,
-dezinformacja oraz prywatność i bezpieczeństwo danych.`
+● kompetencje cyfrowe - umiejętność korzystania z technologii staje się podstawową kompetencją obywatelską.
+Zagrożenia związane z życiem w społeczeństwie informacyjnym to: wykluczenie cyfrowe, dezinformacja oraz prywatność i bezpieczeństwo danych.`
   },
   {
     id: 57,
     question: "Etyka w informatyce.",
-    answer: `Etyka w informatyce zajmuje się moralnymi aspektami tworzenia i stosowania systemów
-komputerowych. Główne obszary to:
-●
-prywatność i ochrona danych - prawo do kontroli nad własnymi danymi, problem masowej
-inwigilacji przez korporacje i rządy, regulacje prywatności np. RODO;
-
-
-●
-własność intelektualna - prawa autorskie do oprogramowania, licencjonowanie, open source
-kontra oprogramowanie własnościowe;
-●
-bezpieczeństwo - odpowiedzialność twórców za luki w systemach i konsekwencje ich błędów
-dla użytkowników;
-●
-odpowiedzialność zawodowa - kto ponosi odpowiedzialność, kiedy system zawiedzie i
-spowoduje szkodę; kodeksy etyczne które regulują zachowanie informatyków;
-●
-sztuczna inteligencja - stronniczość algorytmów, autonomiczne podejmowanie decyzji,
-odpowiedzialność za działania systemów AI;
-●
-wykluczenie cyfrowe - nierówny dostęp do technologii pogłębia nierówności społeczne;
-●
-dezinformacja - rola platform internetowych w rozprzestrzenianiu fałszywych informacji i
-odpowiedzialność za treści.`
+    answer: `Etyka w informatyce zajmuje się moralnymi aspektami tworzenia i stosowania systemów komputerowych. Główne obszary to:
+● prywatność i ochrona danych - prawo do kontroli nad własnymi danymi, problem masowej inwigilacji przez korporacje i rządy, regulacje prywatności np. RODO;
+● własność intelektualna - prawa autorskie do oprogramowania, licencjonowanie, open source kontra oprogramowanie własnościowe;
+● bezpieczeństwo - odpowiedzialność twórców za luki w systemach i konsekwencje ich błędów dla użytkowników;
+● odpowiedzialność zawodowa - kto ponosi odpowiedzialność, kiedy system zawiedzie i spowoduje szkodę;
+● kodeksy etyczne które regulują zachowanie informatyków - ACM Code of Ethics nakłada obowiązek działania w interesie publicznym, uczciwości, ochrony prywatności i zgłaszania zagrożeń, a IEEE Code of Ethics kładzie nacisk na bezpieczeństwo i rzetelność techniczną;
+● sztuczna inteligencja - stronniczość algorytmów, autonomiczne podejmowanie decyzji, odpowiedzialność za działania systemów AI;
+● wykluczenie cyfrowe - nierówny dostęp do technologii pogłębia nierówności społeczne;
+● dezinformacja - rola platform internetowych w rozprzestrzenianiu fałszywych informacji i odpowiedzialność za treści.`
   },
   {
     id: 58,
     question: "Odpowiedzialność zawodowa informatyków.",
     answer: `Odpowiedzialność zawodowa informatyków obejmuje trzy wymiary:
-- prawny - zgodność oprogramowania z przepisami (RODO, prawo autorskie, prawo zamówień
-publicznych). Informatyk może ponosić odpowiedzialność cywilną lub karną za błędy powodujące
-szkody;
-- etyczny - postępowanie zgodne z kodeksami zawodowymi - (ACM Code of Ethics nakłada
-obowiązek działania w interesie publicznym, uczciwości, ochrony prywatności i zgłaszania zagrożeń,
-IEEE Code of Ethics kładzie nacisk na bezpieczeństwo i rzetelność techniczną);
-- zawodowy - jakość wytwarzanych systemów, dokumentacji i procesu wytwórczego;
-odpowiedzialność za testowanie, utrzymanie i bezpieczeństwo kodu.
-Szczególne obszary odpowiedzialności to systemy krytyczne (oprogramowania medyczne, lotnicze czy
-energetyczne); ochrona danych oraz systemy AI, gdzie problemem jest wnioskowanie odpowiedzialnego
-za decyzję podejmowaną przez algorytm.`
+● prawny - zgodność oprogramowania z przepisami (RODO, prawo autorskie, prawo zamówień publicznych). Informatyk może ponosić odpowiedzialność cywilną lub karną za błędy powodujące szkody;
+● etyczny - postępowanie zgodne z kodeksami zawodowymi - (ACM Code of Ethics nakłada obowiązek działania w interesie publicznym, uczciwości, ochrony prywatności i zgłaszania zagrożeń, IEEE Code of Ethics kładzie nacisk na bezpieczeństwo i rzetelność techniczną);
+● zawodowy - jakość wytwarzanych systemów, dokumentacji i procesu wytwórczego;
+● odpowiedzialność za testowanie, utrzymanie i bezpieczeństwo kodu.
+Szczególne obszary odpowiedzialności to systemy krytyczne (oprogramowania medyczne, lotnicze czy energetyczne); ochrona danych oraz systemy AI, gdzie problemem jest wnioskowanie odpowiedzialnego za decyzję podejmowaną przez algorytm.`
   },
   {
     id: 59,
     question: "Ochrona własności intelektualnej w informatyce.",
-    answer: `Ochrona własności intelektualnej w informatyce obejmuje mechanizmy prawne chroniące
-oprogramowanie, algorytmy i inne wytwory cyfrowe.
+    answer: `Ochrona własności intelektualnej w informatyce obejmuje mechanizmy prawne chroniące oprogramowanie, algorytmy i inne wytwory cyfrowe.
 Ochrona obejmuje:
-●
-prawo autorskie - chroni kod źródłowy jako utwór automatycznie od momentu powstania, nie
-wymaga rejestracji; nie chroni jednak idei ani algorytmów;
-●
-patenty - chronią rozwiązania techniczne; algorytmy same w sobie są w większości
-jurysdykcji niepatentowalne;
-●
-znaki towarowe - chronią nazwy i logotypy produktów i firm;
-●
-tajemnica przedsiębiorstwa - ochrona poufnych informacji handlowych i technicznych
-poprzez umowy NDA.
-Kluczową rolę odgrywają licencje, które określają zasady korzystania z oprogramowania. Ich rodzaje
-to licencje własnościowe, open source oraz copyleft (GPL).`
+● prawo autorskie - chroni kod źródłowy jako utwór automatycznie od momentu powstania, nie wymaga rejestracji; nie chroni jednak idei ani algorytmów;
+● patenty - chronią rozwiązania techniczne; algorytmy same w sobie są w większości jurysdykcji niepatentowalne;
+● znaki towarowe - chronią nazwy i logotypy produktów i firm;
+● tajemnica przedsiębiorstwa - ochrona poufnych informacji handlowych i technicznych poprzez umowy NDA.
+Kluczową rolę odgrywają licencje, które określają zasady korzystania z oprogramowania. Ich rodzaje to licencje własnościowe, open source oraz copyleft (GPL).`
   },
   {
     id: 60,
     question: "Ochrona prywatności użytkowników technologii informacyjnych.",
-    answer: `Ochrona prywatności użytkowników technologii informacyjnych polega na zabezpieczaniu danych
-osobowych przed nieuprawnionym dostępem i niewłaściwym wykorzystaniem. Ochrona obejmuje
-metody techniczne oraz regulacje prawne.
+    answer: `Ochrona prywatności użytkowników technologii informacyjnych polega na zabezpieczaniu danych osobowych przed nieuprawnionym dostępem i niewłaściwym wykorzystaniem. Ochrona obejmuje metody techniczne oraz regulacje prawne.
+
 Metody techniczne:
 ● szyfrowanie;
 ● anonimizacja - nieodwracalne usunięcie możliwości identyfikacji osoby;
 ● pseudonimizacja - zastąpienie danych z możliwością odwrócenia procesu.
+
 RODO, jako regulacje prawne wprowadzają zasady:
 ● minimalizacji danych;
 ● transparentności gromadzenia i celowości;
 ● zgody użytkownika;
 ● prawa do bycia zapomnianym - możliwość zażądania usunięcia danych.
-Rzeczywiste zagrożenia prywatności to śledzenie przez pliki cookies, systemy analityczne, czy
-profilowanie użytkownika na podstawie zbieranych danych.`
+
+Rzeczywiste zagrożenia prywatności to śledzenie przez pliki cookies, systemy analityczne, czy profilowanie użytkownika na podstawie zbieranych danych.`
   },
   {
     id: 61,
     question: "Ryzyko związane z projektami informatycznymi.",
-    answer: `Ryzyko w projektach informatycznych to możliwość wystąpienia zdarzeń negatywnie wpływających na
-zakres, czas, koszt lub jakość projektu. Kategorie ryzyka:
-- techniczne - nieznane technologie, błędy architektoniczne, problemy z integracją;
-- organizacyjne - zmiany wymagań, niejasny zakres projektu, brak wsparcia kierownictwa;
-- ludzkie - rotacja zespołu, brak kompetencji, konflikty;
-- biznesowe - zmiany priorytetów, brak finansowania, zmiana otoczenia rynkowego;
-- bezpieczeństwa - podatności, wycieki danych, ataki.
-Aby skutecznie zarządzać ryzykiem należy: przeprowadzić identyfikację; wykonać analizę
-prawdopodobieństwa i wpływu; zaplanować reakcję na ryzyko i sposób redukcji ryzyka, a także stale
-monitorować rejestr.`
+    answer: `Ryzyko w projektach informatycznych to możliwość wystąpienia zdarzeń negatywnie wpływających na zakres, czas, koszt lub jakość projektu. Kategorie ryzyka:
+● techniczne - nieznane technologie, błędy architektoniczne, problemy z integracją;
+● organizacyjne - zmiany wymagań, niejasny zakres projektu, brak wsparcia kierownictwa;
+● ludzkie - rotacja zespołu, brak kompetencji, konflikty;
+● biznesowe - zmiany priorytetów, brak finansowania, zmiana otoczenia rynkowego;
+● bezpieczeństwa - podatności, wycieki danych, ataki.
+Aby skutecznie zarządzać ryzykiem należy: przeprowadzić identyfikację; wykonać analizę prawdopodobieństwa i wpływu; zaplanować reakcję na ryzyko i sposób redukcji ryzyka, a także stale monitorować rejestr ryzyka.`
   },
   {
     id: 62,
     question: "Szkoła w dobie nowoczesnych technologii informacyjnych.",
     answer: `Szkoła w dobie nowoczesnych technologii informacyjnych korzysta z wielu narzędzi i możliwości.
-Dzięki platformom nauczania online (Teams, Moodle), uczniowie mogą korzystać z nauki zdalnej,
-niezależnie od miejsca. Często wykorzystuje się również multimedia i metody aktywizacji, aby
-zwiększyć zaangażowanie uczniów i spersonalizować doświadczenia - tutaj wspierać może dostęp do
-narzędzi sztucznej inteligencji.
-Niestety poza szansami, technologie wiążą się również z wyzwaniami: wykluczenie cyfrowe,
-poprawność i jakość informacji, a także uzależnienie od technologii to główne kwestie z jakimi musi
-mierzyć się w tym zakresie szkoła.
-Rola nauczyciela ewoluuje od przekaziciela wiedzy w kierunku przewodnika rozwijającego
-kompetencje uczenia się, krytycznego myślenia oraz kompetencje miękkie.`
+Dzięki platformom nauczania online (Teams, Moodle), uczniowie mogą korzystać z nauki zdalnej, niezależnie od miejsca.
+Często wykorzystuje się również multimedia i metody aktywizacji, aby zwiększyć zaangażowanie uczniów i spersonalizować doświadczenia - tutaj wspierać może dostęp do narzędzi sztucznej inteligencji.
+Niestety poza szansami, technologie wiążą się również z wyzwaniami: wykluczenie cyfrowe, poprawność i jakość informacji, a także uzależnienie od technologii to główne kwestie z jakimi musi mierzyć się w tym zakresie szkoła.
+Rola nauczyciela ewoluuje od przekaziciela wiedzy w kierunku przewodnika rozwijającego kompetencje uczenia się, krytycznego myślenia oraz kompetencje miękkie.`
   },
   {
     id: 63,
-    question: "Komputery kwantowe – przyszłość informatyki.",
-    answer: `Komputery kwantowe to urządzenia obliczeniowe wykorzystujące zjawiska mechaniki kwantowej
-zamiast klasycznej bazującej na bitach.
-Korzystają zamiast nich z kubitów, które mogą znajdować się jednocześnie w stanie 0 i 1
-(superpozycja) oraz mogą przyjmować dowolny stan pośredni.
-Kubity mogą być połączone w taki sposób że stan jednego natychmiast zmienia stan drugiego,
-niezależnie od odległości (splątanie kwantowe).
-Kluczowe algorytmy kwantowe pozwalają na np. faktoryzacja dużych liczb w czasie
-wielomianowym, czy przeszukiwanie nieposortowanych baz danych z kwadratowym
-przyspieszeniem.
-Komputery kwantowe nie są uniwersalnie szybsze - oferują przewagę dla określonej, nie zbyt dużej
-klasy problemów. Dla większości zadań klasyczne komputery pozostają efektywniejsze oraz bardziej
-opłacalne.
+    question: "Komputery kwantowe - przyszłość informatyki.",
+    answer: `Komputery kwantowe to urządzenia obliczeniowe wykorzystujące zjawiska mechaniki kwantowej zamiast klasycznej bazującej na bitach.
+Korzystają zamiast nich z kubitów, które mogą znajdować się jednocześnie w stanie 0 i 1 (superpozycja) oraz mogą przyjmować dowolny stan pośredni.
+Kubity mogą być połączone w taki sposób że stan jednego natychmiast zmienia stan drugiego, niezależnie od odległości (splątanie kwantowe).
+Kluczowe algorytmy kwantowe pozwalają na np. faktoryzacja dużych liczb w czasie wielomianowym, czy przeszukiwanie nieposortowanych baz danych z kwadratowym przyspieszeniem.
+Komputery kwantowe nie są uniwersalnie szybsze - oferują przewagę dla określonej, nie zbyt dużej klasy problemów. Dla większości zadań klasyczne komputery pozostają efektywniejsze oraz bardziej opłacalne.
+
 Główne ograniczenia techniczne komputerów kwantowych:
-●
-podatność na jakiekolwiek zakłócenia zewnętrze - kubity tracą stan kwantowy - najlepiej
-operują w temp. bliskiej zera bezwzględnego;
-●
-korekcja błędów - wymaga dużej liczby fizycznych kubitów na jeden logiczny;
-●
-trudność z utrzymaniem wielu stabilnych kubitów.`
+● podatność na jakiekolwiek zakłócenia zewnętrze - kubity tracą stan kwantowy - najlepiej operują w temp. bliskiej zera bezwzględnego;
+● korekcja błędów - wymaga dużej liczby fizycznych kubitów na jeden logiczny;
+● trudność z utrzymaniem wielu stabilnych kubitów.`
   },
   {
     id: 64,
     question: "Autonomiczne systemy w środowisku społecznym.",
-    answer: `Autonomiczne systemy są zdolne do samodzielnego podejmowania decyzji i działania bez ciągłej
-kontroli człowieka - wykorzystują AI, uczenie maszynowe i percepcję środowiska.
+    answer: `Autonomiczne systemy są zdolne do samodzielnego podejmowania decyzji i działania bez ciągłej kontroli człowieka - wykorzystują AI, uczenie maszynowe i percepcję środowiska.
+
 Przykłady zastosowań społecznych to:
 ● pojazdy autonomiczne - drony dostawcze czy samochody ze skalą autonomii;
 ● roboty społeczne - asystenci w opiece nad osobami starszymi, edukacji;
 ● systemy decyzyjne - algorytmy rekrutacyjne, systemy oceny kredytowej, moderacja treści;
 ● medycyna - autonomiczna diagnostyka obrazowa, systemy wspomagania chirurgii.
-Poza możliwościami autonomiczne systemy wiążą się też z wieloma wyzwaniami. Najważniejsze z nich
-to: odpowiedzialność prawna; wyjaśnialność (systemy oparte na głębokim uczeniu działają jak czarna
-skrzynka, co utrudnia weryfikację i rozliczalność); stronniczość algorytmów (nauka np. na danych
-historycznych); bezpieczeństwo; nadmierne zaufanie.`
+
+Poza możliwościami autonomiczne systemy wiążą się też z wieloma wyzwaniami. Najważniejsze z nich to: odpowiedzialność prawna; wyjaśnialność (systemy oparte na głębokim uczeniu działają jak czarna skrzynka, co utrudnia weryfikację i rozliczalność); stronniczość algorytmów (nauka np. na danych historycznych); bezpieczeństwo; nadmierne zaufanie.`
   },
   {
     id: 65,
@@ -1017,7 +714,7 @@ Podstawowe sposoby zachowania autonomii to m.in.:
 ● świadome korzystanie z usług internetowych - czytanie polityk prywatności, kontrolowanie uprawnień aplikacji, dywersyfikacja dostawców usług;
 ● korzystanie z otwartych standardów i oprogramowania open source - umożliwia to kontrolę oraz zmniejsza zależność od zamkniętych ekosystemów;
 ● komunikowanie się w bezpieczny sposób, używając szyfrowania, np. HTTPS czy szyfrowania end-to-end;
-● mając świadomość zagrożeń, aktualizując wiedzę oraz dobre praktyki.`
+● aktualizowanie wiedzy oraz dobrych praktyk, mając świadomość zagrożeń.`
   },
   {
     id: 67,
@@ -1026,7 +723,7 @@ Podstawowe sposoby zachowania autonomii to m.in.:
 Podstawowe rodzaje licencji to:
 ● licencje własnościowe. Kod źródłowy jest zamknięty, a użytkownik ma prawa użycia zgodne z umową producenta.
 ● licencje open source. Pozwalają na dostęp do kodu źródłowego i jego modyfikację. Wyróżnia się licencje:
-	permisywne, które pozwalają na szerokie wykorzystanie kodu (MIT, Apache);
-	copyleft, które wymagają udostępnienia kodu pochodnego na tej samej licencji (GPL).`
+  ◌ permisywne, które pozwalają na szerokie wykorzystanie kodu (MIT, Apache);
+  ◌ copyleft, które wymagają udostępnienia kodu pochodnego na tej samej licencji (GPL).`
   },
 ];
