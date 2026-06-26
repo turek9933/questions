@@ -7,7 +7,8 @@ import { StatsView } from "@/components/stats-view";
 import { SettingsView } from "@/components/settings-view";
 import { updateSessionLastUsed } from "@/lib/actions/sessions";
 import type { Stats } from "@/lib/types";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { Dices, List, BarChart3, Settings } from "lucide-react";
 
 interface Props {
   session: { id: string; name: string };
@@ -15,6 +16,8 @@ interface Props {
 }
 
 export function SessionPageClient({ session, initialStats }: Props) {
+  const [statsKey, setStatsKey] = useState(0);
+
   useEffect(() => {
     updateSessionLastUsed(session.id);
   }, [session.id]);
@@ -23,12 +26,32 @@ export function SessionPageClient({ session, initialStats }: Props) {
     <div>
       <h1 className="text-2xl font-bold mb-6">Sesja: {session.name}</h1>
 
-      <Tabs defaultValue="practice" className="w-full">
+      <Tabs
+        defaultValue="practice"
+        className="w-full"
+        onValueChange={(value) => {
+          if (value === "stats") {
+            setStatsKey((k) => k + 1);
+          }
+        }}
+      >
         <TabsList className="mb-6">
-          <TabsTrigger value="practice">Losowe pytanie</TabsTrigger>
-          <TabsTrigger value="review">Lista pytań</TabsTrigger>
-          <TabsTrigger value="stats">Statystyki</TabsTrigger>
-          <TabsTrigger value="settings">Ustawienia</TabsTrigger>
+          <TabsTrigger value="practice">
+            <Dices className="h-4 w-4" />
+            Losowe pytanie
+          </TabsTrigger>
+          <TabsTrigger value="review">
+            <List className="h-4 w-4" />
+            Lista pytań
+          </TabsTrigger>
+          <TabsTrigger value="stats">
+            <BarChart3 className="h-4 w-4" />
+            Statystyki
+          </TabsTrigger>
+          <TabsTrigger value="settings">
+            <Settings className="h-4 w-4" />
+            Ustawienia
+          </TabsTrigger>
         </TabsList>
 
         <TabsContent value="practice">
@@ -40,7 +63,7 @@ export function SessionPageClient({ session, initialStats }: Props) {
         </TabsContent>
 
         <TabsContent value="stats">
-          <StatsView stats={initialStats} />
+          <StatsView key={statsKey} sessionId={session.id} />
         </TabsContent>
 
         <TabsContent value="settings">
