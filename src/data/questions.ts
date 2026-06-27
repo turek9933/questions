@@ -381,8 +381,7 @@ Kluczowe zasady definiujące model:
 ● definicja struktury - typy danych, klucze główne i obce, więzy integralności;
 ● operowanie danymi - reguły manipulacji danymi (DDL, DML);
 ● integralność i spójność - więzy klucza obcego, zasady ACID;
-● niezależność danych - zmiany na poziomie fizycznym nie wpływają na poziom logiczny i
-odwrotnie.`
+● niezależność danych - zmiany na poziomie fizycznym nie wpływają na poziom logiczny i odwrotnie.`
   },
   {
     id: 41,

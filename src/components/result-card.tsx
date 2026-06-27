@@ -20,9 +20,9 @@ export function ResultCard({ result, referenceAnswer }: Props) {
   const [open, setOpen] = useState(false);
 
   const colorClass =
-    result.score >= 8
+    result.score >= 4
       ? "bg-green-100 text-green-800 border-green-300"
-      : result.score >= 5
+      : result.score >= 3
         ? "bg-yellow-100 text-yellow-800 border-yellow-300"
         : "bg-red-100 text-red-800 border-red-300";
 
@@ -32,7 +32,7 @@ export function ResultCard({ result, referenceAnswer }: Props) {
         <CardContent>
           <p className="text-sm font-medium mb-1">Ocena</p>
           <p className="text-6xl font-bold">{result.score}</p>
-          <p className="text-sm mt-1">/ 10</p>
+          <p className="text-sm mt-1">/ 5</p>
         </CardContent>
       </Card>
 

@@ -88,7 +88,7 @@ export function StatsView({ sessionId }: Props) {
           </CardHeader>
           <CardContent>
             <p className="text-3xl font-bold">{stats.average_score}</p>
-            <p className="text-xs text-muted-foreground mt-1">/ 10</p>
+            <p className="text-xs text-muted-foreground mt-1">/ 5</p>
           </CardContent>
         </Card>
 
@@ -113,7 +113,7 @@ export function StatsView({ sessionId }: Props) {
         </CardHeader>
         <CardContent>
           <div className="space-y-2">
-            {Array.from({ length: 11 }, (_, i) => {
+            {Array.from({ length: 6 }, (_, i) => {
               const count = stats.histogram[i] ?? 0;
               const max = Math.max(
                 ...Object.values(stats.histogram),
@@ -128,9 +128,9 @@ export function StatsView({ sessionId }: Props) {
                   <div className="flex-1 h-5 bg-muted rounded-full overflow-hidden">
                     <div
                       className={`h-full rounded-full transition-all ${
-                        i >= 8
+                        i >= 4
                           ? "bg-green-500"
-                          : i >= 5
+                          : i >= 3
                             ? "bg-yellow-500"
                             : "bg-red-500"
                       }`}
@@ -162,9 +162,9 @@ export function StatsView({ sessionId }: Props) {
                   <p className="text-sm flex-1 line-clamp-2">{item.question}</p>
                   <Badge
                     className={
-                      item.avg_score >= 8
+                      item.avg_score >= 4
                         ? "bg-green-100 text-green-800 shrink-0"
-                        : item.avg_score >= 5
+                        : item.avg_score >= 3
                           ? "bg-yellow-100 text-yellow-800 shrink-0"
                           : "bg-red-100 text-red-800 shrink-0"
                     }

@@ -33,7 +33,7 @@ Wzorcowa odpowiedź: ${referenceAnswer}
 Odpowiedź studenta: ${userAnswer}
 
 Zwróć WYŁĄCZNIE obiekt JSON, bez żadnego innego tekstu:
-{"score": liczba od 0 do 10, "feedback": "krótkie uzasadnienie po polsku"}`;
+{"score": liczba od 1 do 5, "feedback": "krótkie uzasadnienie po polsku"}`;
 
   let lastError: Error | null = null;
 
@@ -53,8 +53,8 @@ Zwróć WYŁĄCZNIE obiekt JSON, bez żadnego innego tekstu:
 
       if (
         typeof parsed.score === "number" &&
-        parsed.score >= 0 &&
-        parsed.score <= 10 &&
+        parsed.score >= 1 &&
+        parsed.score <= 5 &&
         typeof parsed.feedback === "string"
       ) {
         return parsed;

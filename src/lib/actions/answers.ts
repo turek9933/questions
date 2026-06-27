@@ -8,43 +8,73 @@ import { Stats } from "@/lib/types";
 export async function saveAnswer(
   sessionId: string,
   questionId: number,
-  userAnswer: string,
-  score: number,
-  feedback: string
+  score: number
 ): Promise<void> {
   const id = nanoid();
   const now = Date.now();
 
-  await db.execute({
-    sql: "INSERT INTO answer_records (id, session_id, question_id, user_answer, score, feedback, answered_at) VALUES (?, ?, ?, ?, ?, ?, ?)",
-    args: [id, sessionId, questionId, userAnswer, score, feedback, now],
+  await db.batch([
+    {
+      sql: "INSERT INTO answer_records (id, session_id, question_id, score, answered_at) VALUES (?, ?, ?, ?, ?)",
+      args: [id, sessionId, questionId, score, now],
+    },
+    {
+      sql: `UPDATE question_weights SET
+        total_answers = total_answers + 1,
+        total_score_sum = total_score_sum + ?,
+        last_score = ?,
+        last_answer_at = ?
+      WHERE session_id = ? AND question_id = ?`,
+      args: [score, score, now, sessionId, questionId],
+    },
+  ]);
+}
+
+export async function getQuestionPracticeStats(sessionId: string, questionId: number) {
+  const result = await db.execute({
+    sql: `SELECT total_answers,
+      CASE WHEN total_answers > 0 THEN CAST(total_score_sum AS REAL) / total_answers ELSE 0 END as avg_score,
+      weight
+    FROM question_weights WHERE session_id = ? AND question_id = ?`,
+    args: [sessionId, questionId],
   });
+
+  if (result.rows.length === 0) {
+    return { avgScore: 0, weight: 1.0, totalAnswers: 0 };
+  }
+
+  const row = result.rows[0];
+  return {
+    avgScore: Math.round((row.avg_score as number) * 10) / 10,
+    weight: Math.round((row.weight as number) * 100) / 100,
+    totalAnswers: row.total_answers as number,
+  };
 }
 
 export async function getStats(sessionId: string): Promise<Stats> {
-  const totalResult = await db.execute({
-    sql: `SELECT 
-      COUNT(*) as total_answers,
-      COALESCE(AVG(score), 0) as average_score
-    FROM answer_records WHERE session_id = ?`,
+  const qwResult = await db.execute({
+    sql: `SELECT
+      COALESCE(SUM(total_answers), 0) as total_answers,
+      COALESCE(SUM(total_score_sum), 0) as total_score_sum,
+      COALESCE(SUM(CASE WHEN total_answers > 0 THEN 1 ELSE 0 END), 0) as coverage,
+      COUNT(*) as total_questions
+    FROM question_weights WHERE session_id = ?`,
     args: [sessionId],
   });
 
-  const totalAnswers = totalResult.rows[0].total_answers as number;
-  const averageScore = totalResult.rows[0].average_score as number;
-
-  const distinctResult = await db.execute({
-    sql: "SELECT COUNT(DISTINCT question_id) as coverage FROM answer_records WHERE session_id = ?",
-    args: [sessionId],
-  });
-
-  const coverage = distinctResult.rows[0].coverage as number;
+  const qw = qwResult.rows[0];
+  const totalAnswers = qw.total_answers as number;
+  const totalScoreSum = qw.total_score_sum as number;
+  const averageScore = totalAnswers > 0 ? totalScoreSum / totalAnswers : 0;
+  const coverage = qw.coverage as number;
+  const totalQuestions = qw.total_questions as number;
 
   const lowestResult = await db.execute({
-    sql: `SELECT question_id, AVG(score) as avg_score 
-    FROM answer_records WHERE session_id = ? 
-    GROUP BY question_id 
-    ORDER BY avg_score ASC 
+    sql: `SELECT question_id,
+      CAST(COALESCE(SUM(score), 0) AS REAL) / NULLIF(COUNT(*), 0) as avg_score
+    FROM answer_records WHERE session_id = ?
+    GROUP BY question_id
+    ORDER BY avg_score ASC
     LIMIT 10`,
     args: [sessionId],
   });
@@ -64,39 +94,32 @@ export async function getStats(sessionId: string): Promise<Stats> {
   });
 
   const histogram: Record<number, number> = {};
-  for (let i = 0; i <= 10; i++) histogram[i] = 0;
+  for (let i = 0; i <= 5; i++) histogram[i] = 0;
   for (const row of histogramResult.rows) {
     histogram[row.score as number] = row.count as number;
   }
 
   const questionScoresResult = await db.execute({
-    sql: `SELECT question_id, score 
-    FROM answer_records 
-    WHERE session_id = ? 
-    AND answered_at IN (
-      SELECT MAX(answered_at) 
-      FROM answer_records 
-      WHERE session_id = ? 
-      GROUP BY question_id
-    )`,
-    args: [sessionId, sessionId],
+    sql: "SELECT question_id, last_score, weight FROM question_weights WHERE session_id = ?",
+    args: [sessionId],
   });
 
-  const scoreMap = new Map<number, number>();
-  for (const row of questionScoresResult.rows) {
-    scoreMap.set(row.question_id as number, row.score as number);
-  }
-
-  const questionScores = questions.map((q) => ({
-    question_id: q.id,
-    last_score: scoreMap.get(q.id) ?? null,
-  }));
+  const questionScores = questions.map((q) => {
+    const row = questionScoresResult.rows.find(
+      (r) => (r.question_id as number) === q.id
+    );
+    return {
+      question_id: q.id,
+      last_score: row ? (row.last_score as number | null) : null,
+      weight: row ? (row.weight as number) : 1.0,
+    };
+  });
 
   return {
     total_answers: totalAnswers,
     average_score: Math.round(averageScore * 100) / 100,
     coverage,
-    total_questions: questions.length,
+    total_questions: totalQuestions,
     lowest_scores: lowestScores,
     histogram,
     question_scores: questionScores,

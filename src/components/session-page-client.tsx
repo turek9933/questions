@@ -2,13 +2,14 @@
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { PracticeView } from "@/components/practice-view";
+import { StudyView } from "@/components/study-view";
 import { ReviewView } from "@/components/review-view";
 import { StatsView } from "@/components/stats-view";
 import { SettingsView } from "@/components/settings-view";
 import { updateSessionLastUsed } from "@/lib/actions/sessions";
 import type { Stats } from "@/lib/types";
 import { useEffect, useState } from "react";
-import { Dices, List, BarChart3, Settings } from "lucide-react";
+import { Dices, BookOpen, List, BarChart3, Settings } from "lucide-react";
 
 interface Props {
   session: { id: string; name: string };
@@ -40,6 +41,10 @@ export function SessionPageClient({ session, initialStats }: Props) {
             <Dices className="h-4 w-4" />
             Losowe pytanie
           </TabsTrigger>
+          <TabsTrigger value="study">
+            <BookOpen className="h-4 w-4" />
+            Nauka
+          </TabsTrigger>
           <TabsTrigger value="review">
             <List className="h-4 w-4" />
             Lista pytań
@@ -56,6 +61,10 @@ export function SessionPageClient({ session, initialStats }: Props) {
 
         <TabsContent value="practice">
           <PracticeView sessionId={session.id} />
+        </TabsContent>
+
+        <TabsContent value="study">
+          <StudyView sessionId={session.id} />
         </TabsContent>
 
         <TabsContent value="review">

@@ -39,5 +39,5 @@ export interface Stats {
   total_questions: number;
   lowest_scores: { question_id: number; question: string; avg_score: number }[];
   histogram: Record<number, number>;
-  question_scores: { question_id: number; last_score: number | null }[];
+  question_scores: { question_id: number; last_score: number | null; weight: number }[];
 }
