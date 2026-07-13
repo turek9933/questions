@@ -1,9 +1,9 @@
 "use server";
 
 import { nanoid } from "nanoid";
-import { db } from "@/lib/db";
+import { getDb } from "@/lib/db";
 import { questions } from "@/data/questions";
-import { Stats } from "@/lib/types";
+import { Stats, GlobalStatsEntry, GlobalStatsData, LastAnswerInfo } from "@/lib/types";
 
 export async function saveAnswer(
   sessionId: string,
@@ -13,7 +13,7 @@ export async function saveAnswer(
   const id = nanoid();
   const now = Date.now();
 
-  await db.batch([
+  await getDb().batch([
     {
       sql: "INSERT INTO answer_records (id, session_id, question_id, score, answered_at) VALUES (?, ?, ?, ?, ?)",
       args: [id, sessionId, questionId, score, now],
@@ -31,7 +31,7 @@ export async function saveAnswer(
 }
 
 export async function getQuestionPracticeStats(sessionId: string, questionId: number) {
-  const result = await db.execute({
+  const result = await getDb().execute({
     sql: `SELECT total_answers,
       CASE WHEN total_answers > 0 THEN CAST(total_score_sum AS REAL) / total_answers ELSE 0 END as avg_score,
       weight
@@ -51,8 +51,62 @@ export async function getQuestionPracticeStats(sessionId: string, questionId: nu
   };
 }
 
+export async function getAllSessionsStats(): Promise<GlobalStatsData> {
+  const result = await getDb().execute(`
+    SELECT
+      s.id,
+      s.name,
+      s.last_used_at,
+      COALESCE(SUM(qw.total_answers), 0) as total_answers,
+      COALESCE(SUM(qw.total_score_sum), 0) as total_score_sum,
+      COALESCE(SUM(CASE WHEN qw.total_answers > 0 THEN 1 ELSE 0 END), 0) as coverage,
+      COUNT(qw.question_id) as total_questions
+    FROM sessions s
+    JOIN question_weights qw ON qw.session_id = s.id
+    GROUP BY s.id
+    ORDER BY s.last_used_at DESC
+  `);
+
+  const entries: GlobalStatsEntry[] = result.rows.map((row) => {
+    const totalAnswers = row.total_answers as number;
+    const totalScoreSum = row.total_score_sum as number;
+    return {
+      id: row.id as string,
+      name: row.name as string,
+      total_answers: totalAnswers,
+      average_score: totalAnswers > 0
+        ? Math.round((totalScoreSum / totalAnswers) * 100) / 100
+        : 0,
+      coverage: row.coverage as number,
+      total_questions: row.total_questions as number,
+      last_used_at: row.last_used_at as number,
+    };
+  });
+
+  const lastAnswerResult = await getDb().execute(`
+    SELECT ar.score, ar.answered_at, ar.question_id, s.name as session_name, s.id as session_id
+    FROM answer_records ar
+    JOIN sessions s ON s.id = ar.session_id
+    ORDER BY ar.answered_at DESC
+    LIMIT 1
+  `);
+
+  let lastAnswer: LastAnswerInfo | null = null;
+  if (lastAnswerResult.rows.length > 0) {
+    const row = lastAnswerResult.rows[0];
+    lastAnswer = {
+      sessionName: row.session_name as string,
+      sessionId: row.session_id as string,
+      score: row.score as number,
+      answeredAt: row.answered_at as number,
+    };
+  }
+
+  return { entries, lastAnswer };
+}
+
 export async function getStats(sessionId: string): Promise<Stats> {
-  const qwResult = await db.execute({
+  const qwResult = await getDb().execute({
     sql: `SELECT
       COALESCE(SUM(total_answers), 0) as total_answers,
       COALESCE(SUM(total_score_sum), 0) as total_score_sum,
@@ -69,7 +123,7 @@ export async function getStats(sessionId: string): Promise<Stats> {
   const coverage = qw.coverage as number;
   const totalQuestions = qw.total_questions as number;
 
-  const lowestResult = await db.execute({
+  const lowestResult = await getDb().execute({
     sql: `SELECT question_id,
       CAST(COALESCE(SUM(score), 0) AS REAL) / NULLIF(COUNT(*), 0) as avg_score
     FROM answer_records WHERE session_id = ?
@@ -88,7 +142,7 @@ export async function getStats(sessionId: string): Promise<Stats> {
     };
   });
 
-  const histogramResult = await db.execute({
+  const histogramResult = await getDb().execute({
     sql: "SELECT score, COUNT(*) as count FROM answer_records WHERE session_id = ? GROUP BY score ORDER BY score",
     args: [sessionId],
   });
@@ -99,7 +153,7 @@ export async function getStats(sessionId: string): Promise<Stats> {
     histogram[row.score as number] = row.count as number;
   }
 
-  const questionScoresResult = await db.execute({
+  const questionScoresResult = await getDb().execute({
     sql: "SELECT question_id, last_score, weight FROM question_weights WHERE session_id = ?",
     args: [sessionId],
   });

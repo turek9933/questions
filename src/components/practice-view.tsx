@@ -61,6 +61,7 @@ export function PracticeView({ sessionId }: Props) {
     setUserAnswer("");
     setReferenceAnswer("");
     setQuestionStats(null);
+    window.scrollTo({ top: 0, behavior: "smooth" });
 
     try {
       const q = await getFilteredRandomQuestion(sessionId, recentIds, filter);
@@ -105,6 +106,7 @@ export function PracticeView({ sessionId }: Props) {
 
       setResult(evalResult);
       addRecent(current.id);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (e) {
       const msg = e instanceof Error ? e.message : "Nie udało się ocenić odpowiedzi.";
       setResult({ score: 1, feedback: msg });

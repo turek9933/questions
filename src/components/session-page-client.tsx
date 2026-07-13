@@ -6,6 +6,7 @@ import { StudyView } from "@/components/study-view";
 import { ReviewView } from "@/components/review-view";
 import { StatsView } from "@/components/stats-view";
 import { SettingsView } from "@/components/settings-view";
+import Link from "next/link";
 import { updateSessionLastUsed } from "@/lib/actions/sessions";
 import type { Stats } from "@/lib/types";
 import { useEffect, useState } from "react";
@@ -25,7 +26,16 @@ export function SessionPageClient({ session, initialStats }: Props) {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-6">Sesja: {session.name}</h1>
+      <div className="flex items-center justify-between mb-6">
+        <h1 className="text-2xl font-bold">Sesja: {session.name}</h1>
+        <Link
+          href="/stats"
+          className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+        >
+          <BarChart3 className="h-4 w-4" />
+          <span className="hidden sm:inline">Statystyki globalne</span>
+        </Link>
+      </div>
 
       <Tabs
         defaultValue="practice"
@@ -36,26 +46,26 @@ export function SessionPageClient({ session, initialStats }: Props) {
           }
         }}
       >
-        <TabsList className="mb-6">
+        <TabsList className="mb-6 justify-start sm:justify-center">
           <TabsTrigger value="practice">
-            <Dices className="h-4 w-4" />
-            Losowe pytanie
+            <Dices className="h-4 w-4 shrink-0" />
+            <span className="hidden sm:inline">Losowe pytanie</span>
           </TabsTrigger>
           <TabsTrigger value="study">
-            <BookOpen className="h-4 w-4" />
-            Nauka
+            <BookOpen className="h-4 w-4 shrink-0" />
+            <span className="hidden sm:inline">Nauka</span>
           </TabsTrigger>
           <TabsTrigger value="review">
-            <List className="h-4 w-4" />
-            Lista pytań
+            <List className="h-4 w-4 shrink-0" />
+            <span className="hidden sm:inline">Lista pytań</span>
           </TabsTrigger>
           <TabsTrigger value="stats">
-            <BarChart3 className="h-4 w-4" />
-            Statystyki
+            <BarChart3 className="h-4 w-4 shrink-0" />
+            <span className="hidden sm:inline">Statystyki</span>
           </TabsTrigger>
           <TabsTrigger value="settings">
-            <Settings className="h-4 w-4" />
-            Ustawienia
+            <Settings className="h-4 w-4 shrink-0" />
+            <span className="hidden sm:inline">Ustawienia</span>
           </TabsTrigger>
         </TabsList>
 

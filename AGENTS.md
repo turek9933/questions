@@ -4,7 +4,7 @@
 - **Framework:** Next.js 16+ (App Router), TypeScript
 - **UI:** TailwindCSS v4 + shadcn/ui (oparty na @base-ui/react)
 - **Database:** Turso (@libsql/client) — chmurowy SQLite
-- **AI:** Google Gemini 2.0 Flash API (@google/generative-ai)
+- **AI:** Google 3.1 Flash Lite API (@google/generative-ai)
 - **Package Manager:** Bun
 
 ## Project Structure
@@ -62,4 +62,6 @@ bun install
 bun run dev        # http://localhost:3000
 bun run build      # test build
 bun run lint       # eslint
+bun test           # testy jednostkowe (16 testów)
+docker compose up  # Docker development
 ```

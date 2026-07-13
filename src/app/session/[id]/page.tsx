@@ -1,5 +1,7 @@
+export const dynamic = "force-dynamic";
+
 import { notFound } from "next/navigation";
-import { db } from "@/lib/db";
+import { getDb } from "@/lib/db";
 import { getStats } from "@/lib/actions/answers";
 import { SessionPageClient } from "@/components/session-page-client";
 
@@ -10,7 +12,7 @@ export default async function SessionPage({
 }) {
   const { id } = await params;
 
-  const sessionResult = await db.execute({
+  const sessionResult = await getDb().execute({
     sql: "SELECT id, name FROM sessions WHERE id = ?",
     args: [id],
   });

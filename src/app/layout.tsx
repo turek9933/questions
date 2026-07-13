@@ -33,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pl" className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-      <body className="min-h-screen bg-background font-sans">
+      <body className="min-h-screen bg-background font-sans" suppressHydrationWarning>
         <div className="relative flex min-h-screen flex-col">
           <header className="border-b">
             <div className="container mx-auto px-4 py-3">

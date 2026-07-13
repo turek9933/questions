@@ -1,13 +1,11 @@
 "use server";
 
-import { db } from "@/lib/db";
+import { getDb } from "@/lib/db";
 import { questions } from "@/data/questions";
-
-const MIN_WEIGHT = 0.05;
-const MAX_WEIGHT = 2.0;
+import { weightedPick, MIN_WEIGHT, MAX_WEIGHT } from "@/lib/weighted-pick";
 
 export async function getWeights(sessionId: string) {
-  const result = await db.execute({
+  const result = await getDb().execute({
     sql: "SELECT question_id, weight FROM question_weights WHERE session_id = ?",
     args: [sessionId],
   });
@@ -17,20 +15,6 @@ export async function getWeights(sessionId: string) {
     weights[row.question_id as number] = row.weight as number;
   }
   return weights;
-}
-
-function weightedPick(
-  items: { id: number; weight: number }[]
-): number | null {
-  if (items.length === 0) return null;
-  const totalWeight = items.reduce((sum, w) => sum + w.weight, 0);
-  const random = Math.random() * totalWeight;
-  let cumulative = 0;
-  for (const item of items) {
-    cumulative += item.weight;
-    if (random <= cumulative) return item.id;
-  }
-  return items[0].id;
 }
 
 type QuestionFilter = "all" | "unanswered" | "red" | "unanswered_or_red";
@@ -58,7 +42,7 @@ export async function getFilteredRandomQuestion(
       break;
   }
 
-  const result = await db.execute({ sql, args });
+  const result = await getDb().execute({ sql, args });
 
   const candidates: { id: number; weight: number }[] = [];
   for (const row of result.rows) {
@@ -92,7 +76,7 @@ export async function drawStudyQuestions(
   sessionId: string,
   count: number
 ): Promise<{ id: number; question: string; answer: string }[]> {
-  const weightsResult = await db.execute({
+  const weightsResult = await getDb().execute({
     sql: "SELECT question_id, weight FROM question_weights WHERE session_id = ?",
     args: [sessionId],
   });
@@ -133,7 +117,7 @@ export async function updateWeight(
   else if (score === 3) factor = 0.7;
   else factor = 1.2;
 
-  await db.execute({
+  await getDb().execute({
     sql: `UPDATE question_weights SET weight = MIN(?, MAX(?, weight * ?)) WHERE session_id = ? AND question_id = ?`,
     args: [MAX_WEIGHT, MIN_WEIGHT, factor, sessionId, questionId],
   });
@@ -143,14 +127,14 @@ export async function skipQuestion(
   sessionId: string,
   questionId: number
 ): Promise<void> {
-  await db.execute({
+  await getDb().execute({
     sql: `UPDATE question_weights SET weight = MIN(?, MAX(?, weight * 1.2)) WHERE session_id = ? AND question_id = ?`,
     args: [MAX_WEIGHT, MIN_WEIGHT, sessionId, questionId],
   });
 }
 
 export async function resetWeights(sessionId: string): Promise<void> {
-  await db.execute({
+  await getDb().execute({
     sql: "UPDATE question_weights SET weight = 1.0 WHERE session_id = ?",
     args: [sessionId],
   });

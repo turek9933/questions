@@ -64,8 +64,8 @@ export function StudyView({ sessionId }: Props) {
       const picked2 =
         remaining1.length > 0
           ? await pickFromCandidates(
-              remaining1.map((c) => ({ id: c.id, weight: c.weight }))
-            )
+            remaining1.map((c) => ({ id: c.id, weight: c.weight }))
+          )
           : null;
 
       const pickedIds = [picked1, picked2].filter(
@@ -135,6 +135,7 @@ export function StudyView({ sessionId }: Props) {
           feedback: evalResult.feedback,
         },
       ]);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (e) {
       const msg =
         e instanceof Error ? e.message : "Nie udało się ocenić odpowiedzi.";
@@ -142,10 +143,10 @@ export function StudyView({ sessionId }: Props) {
         prev.map((it, i) =>
           i === index
             ? {
-                ...it,
-                result: { score: 1, feedback: msg },
-                pending: false,
-              }
+              ...it,
+              result: { score: 1, feedback: msg },
+              pending: false,
+            }
             : it
         )
       );
@@ -160,13 +161,14 @@ export function StudyView({ sessionId }: Props) {
       prev.map((it, i) =>
         i === index
           ? {
-              ...it,
-              userAnswer: "",
-              result: { score: 1, feedback: "Pominięte" },
-            }
+            ...it,
+            userAnswer: "",
+            result: { score: 1, feedback: "Pominięte" },
+          }
           : it
       )
     );
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const allChecked = answerItems.every((item) => item.result !== null);
@@ -302,7 +304,7 @@ export function StudyView({ sessionId }: Props) {
 
         {allChecked && (
           <div className="text-center">
-            <Button onClick={() => setStage("done")} size="lg">
+            <Button onClick={() => { window.scrollTo({ top: 0, behavior: "smooth" }); setStage("done"); }} size="lg">
               Zobacz podsumowanie
             </Button>
           </div>

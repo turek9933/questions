@@ -32,6 +32,28 @@ export interface EvaluateResult {
   feedback: string;
 }
 
+export interface GlobalStatsEntry {
+  id: string;
+  name: string;
+  total_answers: number;
+  average_score: number;
+  coverage: number;
+  total_questions: number;
+  last_used_at: number;
+}
+
+export interface LastAnswerInfo {
+  sessionName: string;
+  sessionId: string;
+  score: number;
+  answeredAt: number;
+}
+
+export interface GlobalStatsData {
+  entries: GlobalStatsEntry[];
+  lastAnswer: LastAnswerInfo | null;
+}
+
 export interface Stats {
   total_answers: number;
   average_score: number;

@@ -15,6 +15,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { getSessions, createSession, deleteSession } from "@/lib/actions/sessions";
+import { BarChart3 } from "lucide-react";
 import type { Session } from "@/lib/types";
 
 export function SessionPicker() {
@@ -78,6 +79,23 @@ export function SessionPicker() {
           <Button onClick={handleCreate} disabled={creating || !newName.trim()}>
             {creating ? "Tworzenie..." : "Utwórz"}
           </Button>
+        </CardContent>
+      </Card>
+
+      <Card
+        className="mb-8 border-dashed hover:shadow-md transition-shadow cursor-pointer"
+        onClick={() => router.push("/stats")}
+      >
+        <CardContent className="flex items-center gap-4 p-4">
+          <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary shrink-0">
+            <BarChart3 className="h-6 w-6" />
+          </div>
+          <div>
+            <h3 className="font-semibold text-lg">Statystyki globalne</h3>
+            <p className="text-sm text-muted-foreground">
+              Podsumowanie wszystkich sesji — średnie, pokrycie, porównanie
+            </p>
+          </div>
         </CardContent>
       </Card>
 
