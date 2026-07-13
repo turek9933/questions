@@ -18,6 +18,7 @@ export const metadata: Metadata = {
   title: "Powtarzanie pytań egzaminacyjnych",
   description: "Aplikacja do powtarzania pytań przed egzaminem inżynierskim",
   manifest: "/manifest.json",
+  icons: [{ rel: "icon", url: "/favicon.svg", type: "image/svg+xml" }],
   other: {
     "theme-color": "#0a0a0a",
     "apple-mobile-web-app-capable": "yes",
